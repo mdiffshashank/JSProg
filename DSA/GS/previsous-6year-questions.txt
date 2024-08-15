@@ -1,0 +1,644 @@
+// GS - Programs
+
+// Code 1 - get nested array elements
+
+/*
+const arr = [[1,[2,3,3],[3],[4,6],[9]],[[2,3,4]]];
+
+// console.log(arr.flat(Infinity));
+
+const output = [];
+function flatten(a) {
+    for(let i = 0; i < a.length; i++) {
+        if (typeof a[i] === 'object') {
+            flatten(a[i])
+        } else {
+            output.push(a[i]);
+        }
+    }
+    return output;
+}
+
+console.log( flatten(arr) );
+*/
+
+// Code 2 - Occurrence of string output- a4b3c2 --- aaaabbbcc(string)
+// Give a string, return the character & count of each character till it's repeating
+
+/*
+function transform(str) {
+    let count = 1;
+    let output = '';
+    for (var i = 1; i < str.length; i++) {
+       if (str[i - 1] === str[i]) {
+           count++;
+       } else {
+           output += str[i - 1];
+           output += count;
+           count = 1;
+       }
+    }
+    if (i === str.length && count > 0) {
+        output += str[str.length - 1];
+        output += count;
+    }
+    return output;
+}
+console.log( transform('a') );
+console.log( transform('aa') );
+console.log( transform('aabbbaac') );
+console.log( transform('aaabbbaa') );
+*/
+
+// Code 3 - Transform String
+
+/*
+function transform(str) {
+    let currChar;
+    let occurance;
+    let output = '';
+    for (let i = 0; i < str.length; i++) {
+        currChar = str[i];
+        occurance = str[i + 1];
+
+        // output += currChar.repeat(occurance);
+        // OR
+        while(occurance--) {
+            output += currChar;
+        }
+    }
+    return output;
+}
+
+console.log( transform('a1b1c1') )
+console.log( transform('a2b2c2') )
+console.log( transform('a3c1b2a2') )
+
+// abc -> a1b1c1
+// aabbcc -> a2b2c2
+// aaacbbaa -> a3c1b2a2
+*/
+
+// Code 4 - program to merge array of objects with same key and sum the score
+
+/*
+const input = [
+  { key: 'A', score: 10 },
+  { key: 'B', score: 20 },
+  { key: 'A', score: 30 },
+  { key: 'C', score: 40 },
+  { key: 'B', score: 50 },
+];
+
+function mergeAndSumScores(arr) {
+    return arr.reduce((acc, curr) => {
+        const { key, score } = curr;
+        acc[key] = (acc[key] || 0) + score;
+        return acc;
+    }, {});
+}
+
+console.log( mergeAndSumScores(input) );
+*/
+
+// Code 5 - Trapping Rain Water Problem
+// https://leetcode.com/problems/trapping-rain-water/submissions/1347478816/
+// https://leetcode.com/problems/trapping-rain-water/submissions/1348455612/
+
+// Code 6 - Return start and end index of longest uniform substring
+
+// "aabbbbbbaccccccc" -> [9,15]
+// "abbbccda" -> [1, 3]
+// "10000111" ->> [ 1, 4 ]
+// "aabbbbCdAA" => [ 2, 5 ]
+
+/*
+function longestUniformSubstring(str) {
+    // start and end index
+    let output = [0, 0];
+    let start = 0, end = 0;
+    while (end < str.length) {
+        while( str[start] === str[end] ) {
+            end++;
+        }
+        
+        if ( (output[1] - output[0]) < (end - start) ) {
+            output[0] = start;
+            output[1] = end - 1;
+        }
+        start = end;
+    }
+    return output;
+}
+
+console.log( longestUniformSubstring('aabbbbbbaccccccc') );
+console.log( longestUniformSubstring('abbbccda') );
+console.log( longestUniformSubstring('10000111') );
+console.log( longestUniformSubstring('aabbbbCdAA') );
+*/
+
+// Code 7 - Given a list of student test scores, find the best average grade.
+
+/*
+const people = [
+  [ "Bobby", "87" ],
+  [ "Charles", "100" ],
+  [ "Eric", "64" ],
+  [ "Charles", "22" ]
+]
+// Expected output: 87
+
+const people2 = [
+  ["jerry","65"],
+  ["bob","91"], 
+  ["jerry","23"],
+  ["Eric","83"]
+]
+// 91
+
+function bestAverageGrade(arr) {
+    const map = {};
+    arr.forEach(curr => {
+        const [key, value] = curr;
+        if (map[key])
+            map[key].push(value)
+        else
+            map[key] = [value];
+    });
+
+    let max = -Infinity;
+    Object.entries(map).forEach((curr) => {
+        const [key, value] = curr;
+        max = Math.max(
+            max,
+            Math.floor(value.reduce( (acc, item) => acc + Number(item), 0 ) / value.length)
+        );
+    })
+    return max;
+}
+
+console.log( bestAverageGrade(people) );
+console.log( bestAverageGrade(people2) );
+*/
+
+// Code 8 - Permutation in String
+// https://leetcode.com/problems/permutation-in-string/description/
+
+// Code 9 - String Compression
+// https://leetcode.com/problems/string-compression/submissions/1347513645/
+
+// Code 10 - Find second minimum element in array
+// https://leetcode.com/discuss/interview-question/1041999/find-second-minimum-element-in-array
+// duplicate + negative
+
+/*
+const array = [5, 3, 2, 1, 39, 44, -23, 55, -23];
+let min = Infinity;
+let minSec = Infinity;
+
+for (let i = 0; i < array.length; i++) {
+    if (array[i] < min) {
+        minSec = min;
+        min = array[i];
+    }
+}
+
+console.log(minSec);
+*/
+
+// Code 11 - First Unique Character in the given string
+// Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+
+// https://leetcode.com/problems/first-unique-character-in-a-string/submissions/1347527403/
+
+// PENDING
+// Code 12 - Encode given string by replacing substrings with prefix same as itself with *
+/*
+Given string str of size N containing only lowercase English letters. The task is to encrypt the string such that the substrings having same prefix as itself are replaced by a *. Generate the encrypted string.
+
+Note: If the string can be encrypted in multiple ways, find the smallest encrypted string. 
+
+Input: str = “ababcababcd”
+Output: ab*c*d
+Explanation: The substring “ababc” starting from 5th index (0 based indexing) can be replaced by a ‘*’. So the string becomes “ababcababcd” ->  “ababc*d”. Now the substring “ab” starting from 2nd index can again be replaced with a ‘*’. So the string becomes “ab*c*d”
+
+Input: str = “zzzzzzz”
+Output: z*z*z
+Explanation: The string can be encrypted  in 2 ways: “z*z*z” and “z**zzz”. Out of  the two “z*z*z” is smaller in length.
+*/
+
+// function encode(str) {
+//     for(let i = 0; i < str.length; i++) {
+
+//     }
+// }
+
+// console.log( encode('ababcababcd') );
+// console.log( encode('zzzzzzz') );
+
+// Code 13 - Find the Winner of the Circular Game
+// https://leetcode.com/problems/find-the-winner-of-the-circular-game/submissions/1347545754/
+
+// Code 14. implement deque
+// push pop shift unshift
+
+// PENDING
+// Code 15. Minimum Path Sum
+// https://leetcode.com/problems/minimum-path-sum/description/
+// https://leetcode.com/problems/minimum-path-sum/submissions/1347701810/
+
+// PENDING
+// Code 16. Police and Thieves
+// https://www.geeksforgeeks.org/problems/police-and-thieves--141631/1
+
+// Code 17 - Pascal's triangle
+// https://leetcode.com/problems/pascals-triangle/submissions/1347558629/
+
+// Code 18 - Find Median of 2 arrays, also asked me to not use Arrays.sort()
+// Input: a[] = {-5, 3, 6, 12, 15}, b[] = {-12, -10, -6, -3, 4, 10}
+// Output: The median is 3.
+
+/*
+const arr1 = [-5, 3, 6, 12, 15];
+const arr2 = [-12, -10, -6, -3, 4, 10];
+console.log( mergedAndgetMedian(arr1, arr2) ); // 3
+
+let a = [1, 12, 15, 26, 38];
+let b = [2, 13, 17, 30, 45];
+console.log( mergedAndgetMedian(a, b) ); // 16
+
+function mergeArrays(a1, a2) {
+    const merged = [];
+
+    let p1 = 0, p2 = 0;
+
+    while (p1 < a1.length && p2 < a2.length) {
+        if ( a1[p1] < a2[p2] ) {
+            merged.push(a1[p1]);
+            p1++
+        } else {
+            merged.push(a2[p2]);
+            p2++
+        }
+    }
+    while (p1 < a1.length) merged.push(a1[p1++]); 
+    while (p2 < a2.length) merged.push(a2[p2++]);
+    
+    return merged;
+}
+
+function mergedAndgetMedian(a1, a2) {
+    const merged = mergeArrays(a1, a2);
+    const length = merged.length;
+
+    if (length % 2 === 0) {
+        return ( merged[ Math.floor( length / 2 ) ] + merged[ Math.floor( length / 2 ) - 1 ] ) / 2;
+    } else {
+        return merged[ Math.floor( length / 2 ) ];
+    }
+}
+*/
+
+// Code 19 - find the intersection elements in two arrays.
+// https://leetcode.com/problems/intersection-of-two-arrays/submissions/1347574440/
+
+// Code 20 - Interface of Two Arrays with duplicates 2
+// https://leetcode.com/problems/intersection-of-two-arrays-ii/submissions/1347581331/
+
+// Code 21 - Top K Frequent Words
+// https://leetcode.com/problems/top-k-frequent-words/submissions/1347584370/
+
+// Code 22 - Position of robot after given movements
+
+/*
+https://www.geeksforgeeks.org/position-of-robot-after-given-movements/
+
+Given a robot which can only move in four directions, UP(U), DOWN(D), LEFT(L), RIGHT(R). Given a string consisting of instructions to move. Output the coordinates of a robot after executing the instructions. Initial position of robot is at origin(0, 0).
+*/
+
+/*
+function generateMoves(moves) {
+    const movesArr = moves.split(' ');
+    let output = '';
+    for (const move of movesArr) {
+        const movePrefix = move[0];
+        if (!Number.isNaN( Number(move[0])))  {
+            let moveCount = Number(move[0]);
+            while (moveCount--) output += move[2]
+        } else {
+            output += move[0];
+        }
+    }
+    return output;
+}
+
+const validMoves = ['U', 'D', 'L', 'R'];
+
+function finalPosition(moves) {
+    let upCount = 0, downCount = 0, leftCount = 0, rightCount = 0;
+    for (const move of moves) {
+        switch(move) {
+            case validMoves[0]:
+                upCount++;
+                break;
+            case validMoves[1]:
+                downCount++;
+                break;
+            case validMoves[2]:
+                leftCount++;
+                break;
+            case validMoves[3]:
+                rightCount++;
+                break;
+        }
+    }
+    return `(${rightCount - leftCount}, ${upCount - downCount})`;
+}
+
+console.log(finalPosition("UDDLRL") ); // Expected Output : (-1, -1)
+console.log(finalPosition("UDDLLRUUUDUURUDDUULLDRRRR") ); // Expected Output : (2, 3)
+console.log(finalPosition(generateMoves("DOWN UP 2xRIGHT DOWN 3xLEFT"))); // Expected Output : (-1, -1)
+*/
+
+// Code 23 - longest word in the dictionary containing the substring
+
+/*
+const dict = ["CODGE", "ODG", "LODGES", "SODG", "dodge", "mODJ", "LODGESSSS"];
+const toSearch = "ODG";
+let maxLength = -Infinity;
+    
+for (const word of dict) {
+    // if (word.indexOf(toSearch) !== -1) {
+    //     maxLength = Math.max(maxLength, word.length);
+    // }
+    for (let i = 0; i < word.length; i++) {
+        if (word[i] === toSearch[0]) {
+            let index = 0;
+            while (index < toSearch.length) {
+                if (toSearch[index] !== word[i + index])
+                    break;
+                index++;
+            }
+
+            if (index === toSearch.length)
+                maxLength = Math.max(maxLength, word.length);
+        }
+    }
+}
+
+console.log(maxLength); // Returns 9 (LODGESSSS)
+*/
+
+// Code 24 - Power of Three
+// https://leetcode.com/problems/power-of-three/submissions/1347618982/
+
+// Code 25 - Most frequent IP address from the logs
+
+/*
+Given a list of logs with IP addresses in the following format.
+lines = ["10.0.0.1 - GET 2020-08-24", "10.0.0.1 - GET 2020-08-24", "10.0.0.2 - GET 2020-08-20"]
+
+Return the most frequent IP address from the logs.
+The retuned IP address value must be in a string format.
+If multiple IP addresses have the count equal to max count, then return the address as a comma-separated string with IP addresses in sorted order.
+
+// Solved here as well - https://leetcode.com/playground/hKdrFuYh
+
+What is the optimal solution for this?
+*/
+
+/*
+const inputs = [
+    ["10.0.0.1 - GET 2020-08-24", "10.0.0.1 - GET 2020-08-24", "10.0.0.2 - GET 2020-08-20"],
+    // Expected Output: "10.0.0.1"
+    ["192.168.1.1 - GET 2022-01-01", "192.168.1.2 - GET 2022-01-01", "192.168.1.1 - GET 2022-01-01"],
+    // Expected Output: "192.168.1.1"
+    ["192.168.1.1 - GET 2022-01-01", "192.168.1.2 - GET 2022-01-01", "192.168.1.3 - GET 2022-01-01"],
+    // Expected Output: "192.168.1.1,192.168.1.2,192.168.1.3"
+    ["10.0.0.1 - GET 2020-08-24"], // Expected Output: "10.0.0.1"
+    [
+        "192.168.1.2 - GET 2022-01-01",
+        "192.168.1.3 - GET 2022-01-01",
+        "192.168.1.1 - GET 2022-01-01",
+        "192.168.1.4 - GET 2022-01-02",
+        "192.168.1.1 - GET 2022-01-02",
+        "192.168.1.2 - GET 2022-01-02",
+        "192.168.1.3 - GET 2022-01-02",
+        "192.168.1.4 - GET 2022-01-03",
+        // Expected Output: "192.168.1.1,192.168.1.2,192.168.1.3,192.168.1.4"
+        // Sorting case
+    ],
+    [
+        ...Array(1000).fill("192.168.1.1 - GET 2022-01-01"),
+        ...Array(1001).fill("192.168.1.3 - GET 2022-01-01")
+        // Expected Output: "192.168.1.3"
+    ]
+]
+
+function mostFreqIps(ips) {
+    const freq = {};
+    let max = -Infinity;
+    for (const ipData of ips) {
+        const ip = ipData.split(' ')[0];
+        freq[ip] = (freq[ip] || 0) + 1;
+        max = Math.max(max, freq[ip]);
+    }
+    return Object.entries(freq)
+        .filter(([, count]) => count === max)
+        .sort()
+        .map(([key]) => key)
+        .join(',')
+}
+
+inputs.forEach((input, index) => {
+        console.log ( mostFreqIps(input) );    
+});
+*/
+
+// Code 26 - Number of moves required to move a bishop from starting position to ending position
+
+/*
+
+On a 8 X 8 chessboard, if you are given a starting position. Find out the number of moves required for the bishop to move to a ending position. Return -1 if that position can't be reached.
+
+Input: Bishop's starting position
+Output: Return Number of moves. return -1 if the move is not possible.
+
+if start and end are not the same color (one white, one black), then -1.
+if start and end are on the same spot, then 0;
+if start and end are on the same line ( ), then 1.
+else return 2.
+*/
+
+/*
+function minMove(x1, y1, x2, y2) {
+    // if both start and end is not same colored box
+    if (isWhite(x1, y1) != isWhite(x2, y2)) return -1;
+    
+    // if both are same positions
+    else if (x1 == x2 && y1 == y2) return 0;
+
+    // if they are in same line
+    else if (Math.abs(x1 - x2) == Math.abs(y1 - y2)) return 1;
+
+    // require a middle step
+    else return 2;
+}
+
+function isWhite(x, y){
+    return x%2 == y%2;
+}
+
+console.log(minMove(0, 0, 1, 2)); // Output should be -1 (0,0 is black and 1,2 is white)
+console.log(minMove(2, 2, 2, 2)); // Output should be 0 (starting and ending on the same square)
+console.log(minMove(2, 0, 0, 2)); // Output should be 1 (diagonal from 2,0 to 0,2)
+console.log(minMove(0, 0, 1, 3)); // Output should be 2 (Examples could have positions that require a middle step)
+*/
+
+// Code 27 - Cycle In Array
+/*
+Given an integer array of size n. Elements of the array is >= 0. Starting from arr[startInd], follow each element to the index it points to. Find a cycle and return its length. No cycle is found -> -1.
+*/
+
+/*
+function lengthOfCycle(arr, startIndex) {
+    let slow = arr[startIndex];
+    let fast = arr[arr[startIndex]];
+    let count = 1;
+    
+    while (slow != fast) {
+        if (fast === undefined || fast >= arr.length) {
+            console.log(-1);
+            return -1;
+        }
+        slow = arr[slow];
+        fast = arr[arr[fast]];
+        count++;
+    }
+    console.log(count);
+}
+
+lengthOfCycle([1, 0], 0); // 2
+lengthOfCycle([1, 2, 0], 0); // 3
+lengthOfCycle([1, 2, 3, 1], 0); // 3
+lengthOfCycle([2, 3, 4, 0, 1], 0); // Expected Output: 5
+lengthOfCycle([1, 0, 3, 4, 2], 2); // Expected Output: 3
+
+lengthOfCycle([0, 1, 2, 3, 4], 0); // Expected Output: 1
+lengthOfCycle([5, 6, 7, 8, 9], 0); // Expected Output: -1
+
+const largeArray = Array.from({length: 100000}, (_, index) => index + 1);
+largeArray[99999] = 50000;  // Creates a large cycle
+lengthOfCycle(largeArray, 0); // Expected Output: 50000
+*/
+
+// Code 28 - Write generator function to get prime numbers one after other from n to 1 and write test case to validate.
+
+/*
+function isPrime(n) {
+    if (n <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0)
+            return false;
+    }
+    return true;
+}
+
+function* primeNTo1Generator(n) {
+    for (let i = n; i >= 2; i--) {
+        if (isPrime(i)) {
+            yield i;
+        }
+    }
+}
+
+for (const item of primeNTo1Generator(100)) {
+    console.log(item);
+}
+*/
+
+// const primeNumberIterator = primeNTo1Generator(100);
+// let isDone = false;
+// while(!isDone) {
+//     const { value, done } = primeNumberIterator.next();
+//     !done && console.log(value);
+//     isDone = done;
+// }
+
+// Code 29 - Covert the object values to to string in expected format, should be dynamic in nature.
+/*
+Example 'Employee 
+{
+    firstName: 'John',
+    lastName: 'Peter',
+    project: {
+        id: 1,
+        name: 'GS'
+    }
+}   
+
+Expected output : 'John, Peter, 1, GS, ' 
+*/
+
+/*
+const employee = {
+    firstName: 'John',
+    lastName: 'Peter',
+    project: {
+        id: 1,
+        name: 'GS'
+    }
+};
+function convertToStringValues(obj) {
+    const result = [];
+    const helper = (obj) => {
+        for (const key in obj) {
+            if (typeof obj[key] === 'object') {
+                helper(obj[key]);
+            } else {
+                result.push(obj[key]);
+            }
+        }
+    }
+    helper(obj);
+    return result.join(', ')
+}
+
+console.log( convertToStringValues(employee) );
+*/
+
+// Code 30 - Longest Substring Without Repeating Characters
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/1347712166/
+
+// Code 31 - Valid Parentheses
+// https://leetcode.com/problems/valid-parentheses/submissions/1347716506/
+
+// Code 32 - Find Minimum in Rotated Sorted Array
+// https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/1347730086/
+
+// Code 33 - Search in Rotated Sorted Array
+// https://leetcode.com/problems/search-in-rotated-sorted-array/submissions/1347746934/
+
+// Code 34 - Best Time to Buy and Sell Stock
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/1347754088/
+
+// Code 35 - Minimum Size Subarray Sum
+// https://leetcode.com/problems/minimum-size-subarray-sum/submissions/1347770098/
+
+// Code 36 - Maximum Subarray
+// https://leetcode.com/problems/maximum-subarray/submissions/1347921903/
+
+// Code 37 - Median of Two Sorted Arrays
+// https://leetcode.com/problems/median-of-two-sorted-arrays/submissions/1346958989/
+
+// Code 38 - Remove All Adjacent Duplicates In String
+// https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/submissions/1347783118/
+
+// Code 39 -  Remove All Adjacent Duplicates In String 2
+// https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/submissions/1347797553/
+
+// Code 40 - Count Prefixes of a Given String
+// https://leetcode.com/problems/count-prefixes-of-a-given-string/submissions/1347801745/
+
+// Code 41 - Group Anagrams
+// https://leetcode.com/problems/group-anagrams/submissions/1347808262/
