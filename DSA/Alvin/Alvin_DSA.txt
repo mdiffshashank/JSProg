@@ -1,0 +1,31 @@
+Linked List
+--------------
+- Linked list is a Data strucutre 
+- made up of many nodes.
+- Node - just a container for some data.
+- (A) -> (B) -> (C) -> (D)
+- Nodes are connected by a link , we say A's next is B.
+- last node D points to null.
+- Linked List is an ordered DS.
+- head and tail of linked list.
+- linked list has position starts from zero same as array indices.
+- Array is stored contiguously in memory where as linked list is not continues.
+- linked list is used in case of inserting an element.
+- e.g. insert q after b .
+
+- you can give head node of linked list and function will track the whole linked list.
+
+- use current variable .
+
+-----------------------------------
+Binary tree criteria
+- at most two children
+- exactly one root
+- exactly one path between root and any other node.
+
+
+
+ 
+
+
+
