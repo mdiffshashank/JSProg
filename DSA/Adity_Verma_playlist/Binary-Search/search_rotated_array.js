@@ -1,8 +1,5 @@
 /**
- *
- * @param {number[]} nums
- * @param {number} target
- * @returns  {number}
+ * program -6
  * returns index of the target in rotated sorted array
  */
 

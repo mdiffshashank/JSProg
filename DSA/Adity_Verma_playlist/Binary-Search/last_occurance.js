@@ -16,7 +16,7 @@ function lastOccurance(arr, target) {
   while (start <= end) {
     mid = Math.floor((start + end) / 2);
     if (arr[mid] === target) {
-      result = mid; // could be first occurance
+      result = mid; // could be last occurance
       start = mid + 1; //<---------------- move to right to find last occurance
     } else if (arr[mid] < target) {
       start = mid + 1;

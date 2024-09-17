@@ -1,5 +1,5 @@
 /**
- * Find the next greater element of Array , if no greater add -1
+ * Find the next smallest element of Array , if no smallest add -1
  * https://www.geeksforgeeks.org/next-greater-element/
  * https://www.youtube.com/watch?v=NXOOYYwpbg4&list=PL_z_8CaSLPWdeOezg68SKkeLN4-T_jNHd&index=2
  * INPUT : [1,3,2,4]

@@ -2,7 +2,7 @@
  *  Find the first unique character in given string, If it does not exist, return -1.
  * https://leetcode.com/problems/first-unique-character-in-a-string/description/
  *
- * TIP: Create a map with frequncy and loop again the string retern char where frequncy is one
+ * TIP: Create a map with frequncy and loop again the string return char where frequncy is one
  */
 
 function firstUniqChar(s) {

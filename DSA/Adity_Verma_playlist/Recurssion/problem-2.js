@@ -10,7 +10,7 @@ function print(n) {
     console.log(n);
     return;
   }
-  console.log(n); // just change one line in induction andresult will be changed
+  console.log(n); // just change one line in induction and result will be changed
   print(n - 1);
 }
 print(18);

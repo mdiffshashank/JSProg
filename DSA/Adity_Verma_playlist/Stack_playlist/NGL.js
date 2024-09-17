@@ -1,5 +1,5 @@
 /**
- *
+ * Neerest greater to left
  * INPUT : [1,3,2,4]
  * OUTPUT: [-1,-1,3,-1]
  *  * Program :2

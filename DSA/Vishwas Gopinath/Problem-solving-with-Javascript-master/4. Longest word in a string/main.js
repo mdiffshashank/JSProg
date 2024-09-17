@@ -1,13 +1,13 @@
-// 1. Wit ha for loop
+// 1. With a for loop
 
 function findLongestWord(str) {
-  var strSplit = str.split(' ');
-  var longestWord = '';
+  var strSplit = str.split(" ");
+  var longestWord = "";
   var longestWordLength = 0;
-  for(var i = 0; i < strSplit.length; i++){
-    if(strSplit[i].length > longestWordLength){
+  for (var i = 0; i < strSplit.length; i++) {
+    if (strSplit[i].length > longestWordLength) {
       longestWordLength = strSplit[i].length;
-	    longestWord = strSplit[i];
+      longestWord = strSplit[i];
     }
   }
   return longestWord;
