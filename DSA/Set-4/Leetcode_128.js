@@ -1,5 +1,6 @@
 /**
- *
+ *longest consecutive elements sequence
+
  * Given an unsorted array of integers nums,
  * return the length of the longest consecutive elements sequence.
  * You must write an algorithm that runs in O(n) time
@@ -10,6 +11,9 @@
 Output: 4
 Explanation: The longest consecutive elements sequence
 is [1, 2, 3, 4]. Therefore its length is 4.
+
+TIP : get the new series 100,200,1, get max for every series
+we define new series if num-1 is not present in array
  */
 
 /* 

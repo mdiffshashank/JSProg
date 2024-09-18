@@ -5,13 +5,12 @@ var isValid = function (s) {
     "}": "{",
   };
   const stack = [];
-  let top = stack.length - 1;
-  
+
   for (l of s) {
     //push on stack on every open bracket
     if (l == "{" || l == "[" || l == "(") stack.push(l);
     else {
-      if (stack[top] == pairMap[l]) {
+      if (stack[stack.length - 1] == pairMap[l]) {
         stack.pop();
       } else {
         return false;
