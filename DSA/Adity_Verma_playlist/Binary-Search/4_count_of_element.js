@@ -12,10 +12,12 @@
 function countOfElement(nums, k) {
   let start = 0;
   let end = nums.length - 1;
+
   let mid;
   let upperBound; //index
-  let lowerBound;
+  let lowerBound; //index
 
+  // solve for lower bound
   while (start <= end) {
     mid = Math.floor(start + (end - start) / 2);
     if (nums[mid] === k) {

@@ -7,11 +7,11 @@
  */
 
 function firstOccurance(arr, target) {
-  let result = -1;
-  const lastIndex = arr.length - 1;
-  let mid;
   let start = 0;
-  let end = lastIndex;
+  let end = arr.length - 1;
+  let mid;
+
+  let result = -1;
 
   while (start <= end) {
     mid = Math.floor((start + end) / 2);

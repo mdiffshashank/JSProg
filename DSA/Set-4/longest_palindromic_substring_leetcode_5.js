@@ -1,7 +1,10 @@
 /**
- * @param {string} str
- * @return {string}
+ * Given a string s, return the longest  palindromic substring
+ in s.
+ * Input: s = "babad"
+ * Output: "bab"
  */
+
 function longestPalindrome(str) {
   let result = "";
   let resultLen = 0;

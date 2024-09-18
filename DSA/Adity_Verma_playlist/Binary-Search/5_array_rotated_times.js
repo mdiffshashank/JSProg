@@ -15,7 +15,7 @@ function findRotationCount(arr) {
   while (start <= end) {
     //no rotation condition
     if (arr[start] <= arr[end]) {
-      return start; // Array is already sorted, no rotation
+      return 0; // Array is already sorted, no rotation
     }
 
     let mid = Math.floor((start + end) / 2);
@@ -36,5 +36,5 @@ function findRotationCount(arr) {
 }
 
 // Example Usage:
-let arr = [4, 5, 6, 7, 0, 1, 2];
+let arr = [7, 0, 1, 2, 4, 5, 6];
 console.log(findRotationCount(arr)); // Output: 4 (rotated 4 times)
