@@ -1,6 +1,6 @@
 /**
  * https://leetcode.com/problems/maximum-subarray/description/
- * find the maximum subarray
+ * find the subarray with the largest sum, and return its sum.
  * INPUT : [-2, 1, -3, 4, -1, 2, 1, -5, 4]
  * OUTPUT: 6
  */

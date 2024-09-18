@@ -1,14 +1,18 @@
+/**
+ *  Find the median of combination of two sorted arrays
+ */
+
 function findMedianSortedArrays(A, B) {
   // Calculate the total length of the combined arrays
   const requiredPos = [];
-  const total = A.length + B.length;
+  const totalLength = A.length + B.length;
 
   // Determine the required positions for the median(s)
-  if (total % 2 === 0) {
-    requiredPos.push(total / 2);
-    requiredPos.push(total / 2 - 1);
+  if (totalLength % 2 === 0) {
+    requiredPos.push(totalLength / 2);
+    requiredPos.push(totalLength / 2 - 1);
   } else {
-    requiredPos.push(Math.floor(total / 2));
+    requiredPos.push(Math.floor(totalLength / 2));
   }
 
   let l1 = 0, //itr for A
