@@ -1,12 +1,18 @@
 /**
  * https://www.geeksforgeeks.org/search-almost-sorted-array/
- * INPUT : [10, 3, 40, 20, 50, 80, 70],40
+ *
+ * Given a sorted array arr[] of size N, some elements of array are moved
+ * to either of the adjacent positions, i.e., arr[i] may be present at
+ * arr[i+1] or arr[i-1] i.e. arr[i] can only be swapped with either
+ * arr[i+1] or arr[i-1]. The task is to search for an element in this array.
+ *
+ * INPUT : [10, 3, 40, 20, 50, 80, 70], target = 40
  * OUTPUT: 2
- * program-9
+ * program-7
  */
 
 function searchInNearlySortedArray(arr, target) {
-  let start = 0;
+  let start = 0; //index
   let end = arr.length - 1;
 
   while (start <= end) {
