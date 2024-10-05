@@ -15,6 +15,7 @@ function NSL(arr) {
       output.push(-1);
       stack.push(arr[i]);
     } else if (stack.length > 0) {
+      //pop till you get the smaller element
       while (stack[stack.length - 1] >= arr[i] && stack.length > 0) {
         stack.pop();
       }
