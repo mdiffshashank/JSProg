@@ -2,7 +2,7 @@
  * find the count of element k in a sorted Array;
  *
  * INPUT  : [2,5,7,10,10,10,12,13,16] , k =10
- * OUTPUT : [3,5]
+ * OUTPUT : [3,5] or 3
  *
  * problem : 4
  *

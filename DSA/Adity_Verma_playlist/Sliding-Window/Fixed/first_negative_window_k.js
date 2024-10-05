@@ -3,8 +3,8 @@
  * https://www.geeksforgeeks.org/first-negative-integer-every-window-size-k/
  *
  * first negative of every woindow of size k
- *
- * OUTPUT: [ -8, 0, -6, -6 ] , K=2
+ * INPUT [-8, 2, 3, -6, 10], K=2
+ * OUTPUT: [ -8, 0, -6, -6 ]
  */
 
 function firstNegatives(nums, size) {

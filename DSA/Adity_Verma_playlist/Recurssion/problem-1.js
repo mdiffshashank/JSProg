@@ -10,6 +10,7 @@ function print(n) {
     console.log(n);
     return;
   }
+  // console.log(n); //print in reverese order
   print(n - 1);
   console.log(n);
 }

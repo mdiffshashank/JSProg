@@ -1,6 +1,7 @@
 /**
  * program -6
  * returns index of the target in rotated sorted array
+ * [4, 5, 6, 7, 0, 1, 2], k=0
  */
 
 function searchInRotatedArray(nums, target) {

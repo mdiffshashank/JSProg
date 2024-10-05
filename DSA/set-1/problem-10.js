@@ -18,7 +18,7 @@ function productExceptSelf(arr) {
 
   for (let i = 0; i < length; i++) {
     output[i] = prefix; // prefix 1 at start
-    prefix *= arr[i]; // multiply curent value to prefix for next iteration
+    prefix *= arr[i]; // multiply current value to prefix for next iteration
   }
 
   for (let i = length - 1; i >= 0; i--) {

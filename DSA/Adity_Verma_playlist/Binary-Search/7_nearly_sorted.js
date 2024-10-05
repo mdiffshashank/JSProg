@@ -8,6 +8,7 @@
  *
  * INPUT : [10, 3, 40, 20, 50, 80, 70], target = 40
  * OUTPUT: 2
+ *
  * program-7
  */
 
