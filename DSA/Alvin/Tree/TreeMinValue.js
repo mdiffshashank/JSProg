@@ -1,9 +1,9 @@
-class Node{
-    constructor(val){
-        this.val = val;
-        this.right = null;
-        this.left = null;
-    }
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.right = null;
+    this.left = null;
+  }
 }
 
 const a = new Node(3);
@@ -19,19 +19,25 @@ b.left = d;
 b.right = e;
 c.right = f;
 
-function treeMinValue(root){
-    if(root===null) return "tree is empty";
-    const stack = [root];
-    let min = root.val;
-    while(stack.length>0){
-        const current = stack.pop();
-        min = Math.min(min,current.val);
-        if(current.left) stack.push(current.left);
-        if(current.right) stack.push(current.right);
-
-    }
-    return min;
+/***
+ *
+ *             3
+ *           /   \
+ *         11     9
+ *       /   \     \
+ *      8     2     7
+ *
+ */
+function treeMinValue(root) {
+  if (root === null) return "tree is empty";
+  const stack = [root];
+  let min = root.val;
+  while (stack.length > 0) {
+    const current = stack.pop();
+    min = Math.min(min, current.val);
+    if (current.left) stack.push(current.left);
+    if (current.right) stack.push(current.right);
+  }
+  return min;
 }
 console.log(treeMinValue(a));
-
-

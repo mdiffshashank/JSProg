@@ -1,9 +1,9 @@
-class Node{
-    constructor(val){
-        this.val = val;
-        this.right = null;
-        this.left = null;
-    }
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.right = null;
+    this.left = null;
+  }
 }
 
 const a = new Node(3);
@@ -19,19 +19,26 @@ b.left = d;
 b.right = e;
 c.right = f;
 
-function treeSum(root){
-    if(root===null) return 0;
-    const stack = [root];
-    let sum = 0;
-    while(stack.length>0){
-        const current = stack.pop();
-        sum += current.val;
-        if(current.left) stack.push(current.left);
-        if(current.right) stack.push(current.right);
+/***
+ *
+ *             3
+ *           /   \
+ *         11     4
+ *       /   \     \
+ *      4     2     1
+ *
+ */
 
-    }
-    return sum;
+function treeSum(root) {
+  if (root === null) return 0;
+  const stack = [root];
+  let sum = 0;
+  while (stack.length > 0) {
+    const current = stack.pop();
+    sum += current.val;
+    if (current.left) stack.push(current.left);
+    if (current.right) stack.push(current.right);
+  }
+  return sum;
 }
 console.log(treeSum(a));
-
-

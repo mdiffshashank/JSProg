@@ -5,27 +5,21 @@ class Node {
   }
 }
 
-const a = new Node("A");
-const b = new Node("B");
-const c = new Node("C");
-const d = new Node("D");
+let a = new Node("a");
+let b = new Node("b");
+let c = new Node("c");
+let d = new Node("d");
 
 a.next = b;
 b.next = c;
 c.next = d;
 
-//pgm-1
-function reverse(head) {
+function traverse(head) {
   let current = head;
-  let previous = null;
-
   while (current !== null) {
-    next = current.next; // store the value in temp
-    current.next = previous;
-    previous = current; //change the pointer
-    current = next;
+    console.log(current.val);
+    current = current.next;
   }
-  return previous;
 }
 
-console.log(reverse(a));
+traverse(a);
