@@ -15,6 +15,7 @@ function longestSubArray(arr, k) {
   //let maxRight = 0;
   let maxLength = -Infinity;
   let sum = 0;
+
   while (right < arr.length) {
     sum += arr[right];
     if (sum > k) {

@@ -5,7 +5,7 @@
  * number of times array is rotated === index of minimum element
  *
  * INPUT : [11,12,15,18,2,5,6,8] //rotated a sorted array
- * TIP : find the index of minimum element that is ans;
+ * TIP : find the index of minimum element that is ans; find prev and next both should be greater
  */
 
 function findRotationCount(arr) {

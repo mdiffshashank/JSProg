@@ -1,13 +1,17 @@
 /**
+ * Given a string s, find the length of the longest substring without repeating characters.
+ * 
  *https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
  * Input: s = "abcabcbb"
  * Output: 3
- *
+ * The answer is "abc", with the length of 3.
+
  */
 
 function longest(s) {
   let left = 0,
     right = 0;
+
   let max = 0;
 
   const set = new Set();

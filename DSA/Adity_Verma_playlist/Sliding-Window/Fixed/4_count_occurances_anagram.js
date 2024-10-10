@@ -48,3 +48,5 @@ function findAnagrams(s, p) {
 var getIndexOf = function (char) {
   return char.charCodeAt(0) - "a".charCodeAt(0);
 };
+
+console.log(findAnagrams("cbaebabacd", "abc"));

@@ -25,6 +25,7 @@ function maxOfSubarray(nums, k) {
       stack.push(nums[right]);
     }
     if (right - left + 1 === k) {
+      //as soon as window is met , maintain the window
       output.push(stack[stack.length - 1]); //stack top
       if (stack[stack.length - 1] === nums[left]) {
         stack.pop();

@@ -38,8 +38,8 @@ d.right = f;
  *        d
  *       / \
  *      e   f
- *
- *
+ *     /     \
+ *    null    null
  */
 
 function height(node) {
@@ -49,4 +49,4 @@ function height(node) {
   return Math.max(left, right) + 1;
 }
 
-console.log(height(a.left));
+console.log(height(a));

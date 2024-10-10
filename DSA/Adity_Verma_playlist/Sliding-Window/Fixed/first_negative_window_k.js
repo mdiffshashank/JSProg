@@ -16,6 +16,7 @@ function firstNegatives(nums, size) {
 
   while (right < nums.length) {
     if (nums[right] < 0) {
+      // add negative number in queue
       queue.push(nums[right]);
     }
     if (right - left + 1 === size) {
