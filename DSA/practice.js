@@ -1,28 +1,44 @@
-const numberStack = [];
-const stringStack = [];
-
-for (let i = 0; i < s.length; i++) {
-  const char = s[i];
-  if (!isNaN(Number(char)) && typeof Number(char) === "number") {
-    numberStack.push(char);
-  } else if (char !== "]") {
-    stringStack.push(char);
-  } else if (char === "]") {
-    let repeatTimes = 0;
-    let outputStr = "";
-
-    while (
-      stringStack.length > 0 &&
-      stringStack[stringStack.length - 1] !== "["
-    ) {
-      outputStr = stringStack.pop() + outputStr;
-    }
-    stringStack.pop(); // pop out "["
-    if (numberStack.length > 0) {
-      repeatTimes = numberStack.pop();
-    }
-    outputStr = outputStr.repeat(repeatTimes);
-    stringStack.push(outputStr);
+class ListNode {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
   }
 }
-return stringStack.pop();
+
+const A = new ListNode(1);
+const B = new ListNode(3);
+const C = new ListNode(4);
+const D = new ListNode(7);
+const E = new ListNode(1);
+const F = new ListNode(2);
+const G = new ListNode(6);
+
+A.next = B;
+B.next = C;
+C.next = D;
+D.next = E;
+E.next = F;
+F.next = G;
+
+var deleteMiddle = function (head) {
+  if (head === null) return null;
+
+  let dummy = new ListNode();
+
+  let tail = dummy;
+
+  let slow = head;
+  let fast = head;
+
+  while (fast.next !== null) {
+    fast = fast.next.next;
+    tail.next = slow;
+    slow = slow.next;
+  }
+
+  tail.next = slow.next;
+
+  return dummy.next;
+};
+
+console.dir(deleteMiddle(A));
